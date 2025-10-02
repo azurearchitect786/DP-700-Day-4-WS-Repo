@@ -1,5 +1,24 @@
 # Fabric notebook source
 
+# METADATA ********************
+
+# META {
+# META   "kernel_info": {
+# META     "name": "synapse_pyspark"
+# META   },
+# META   "dependencies": {
+# META     "lakehouse": {
+# META       "default_lakehouse": "5809242b-873e-46d9-be0d-4e80e4a6f2bb",
+# META       "default_lakehouse_name": "medallion_lkh",
+# META       "default_lakehouse_workspace_id": "9c79b693-e133-415d-83bf-e4bdb9382441",
+# META       "known_lakehouses": [
+# META         {
+# META           "id": "5809242b-873e-46d9-be0d-4e80e4a6f2bb"
+# META         }
+# META       ]
+# META     }
+# META   }
+# META }
 
 # MARKDOWN ********************
 
@@ -22,9 +41,23 @@ data_df = spark.createDataFrame([
 ])
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 display(data_df)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -39,9 +72,23 @@ data_df = spark.createDataFrame([
 ], schema=' col_1 long, col_2 double, col_3 string, col_4 date, col_5 timestamp')
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 display(data_df)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -59,9 +106,23 @@ pandas_df = pd.DataFrame({
 df = spark.createDataFrame(pandas_df)
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 display(df)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -77,6 +138,13 @@ rdd = spark.sparkContext.parallelize([
 ])
 data_df = spark.createDataFrame(rdd, schema=['col_1', 'col_2', 'col_3', 'col_4', 'col_5'])
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # MARKDOWN ********************
 
 # How to View the Dataframes
@@ -85,49 +153,133 @@ data_df = spark.createDataFrame(rdd, schema=['col_1', 'col_2', 'col_3', 'col_4',
 
 data_df.show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.show(2)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 data_df.printSchema()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.show(2, vertical=False)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 data_df.columns
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.count()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 data_df.select('col_1', 'col_2', 'col_3').describe().show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.collect()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 data_df.take(2)
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.tail(1)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 data_df.head(2)
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.toPandas()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # MARKDOWN ********************
 
@@ -140,9 +292,23 @@ from pyspark.sql import Column
 data_df.select(data_df.col_3).show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 display(data_df)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -153,11 +319,25 @@ data_df.show()
 data_df_new = data_df.withColumns({'col_7': data_df.col_1 + 2, 'col_8': data_df.col_1 + 3})
 data_df_new.show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df = data_df.selectExpr("col_1","col_2","col_3","col_4","col_6")
 data_df.show()
 
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -165,9 +345,23 @@ data_df = data_df.drop("col_5")
 data_df.show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.withColumn("col_2", F.col("col_2") / 100).show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -175,17 +369,45 @@ data_df = data_df.withColumnRenamed("col_3", "any_name_of_your_choice")
 data_df.show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.select("col_1","col_6").distinct().show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 data_df.select("col_1","col_6").dropDuplicates(["col_6"]).show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.select(F.countDistinct("col_2").alias("Total_Unique")).show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -194,13 +416,34 @@ from pyspark.sql.functions import upper
 data_df.withColumn('upper_string_col', upper(data_df.any_name_of_your_choice)).show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.filter(data_df.col_1 == 100).show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.where(data_df.col_1 == 100).show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -208,11 +451,25 @@ data_df.filter((data_df.col_1 == 100)
 		& (data_df.col_6 == 'NA')).show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.filter((data_df.col_1 == 100)
 		| (data_df.col_2 == 300.00)).show()
 
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -220,9 +477,23 @@ list = [100, 200]
 data_df.filter(data_df.col_1.isin(list)).show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df.printSchema()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -236,6 +507,13 @@ data_df.show()
 
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df_3 = data_df_2.selectExpr("cast(col_4 as date) as col_4",
@@ -243,27 +521,69 @@ data_df_3 = data_df_2.selectExpr("cast(col_4 as date) as col_4",
 data_df_3.printSchema()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df_4 = data_df_2.selectExpr("(col_1*2) as Bonus").show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 display(data_df_3)
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 data_df_3.createOrReplaceTempView("CastExample")
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 %sql
 SELECT sum(col_1) as TotalSales from CastExample group by col_4
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 processed_frame=spark.sql('SELECT sum(col_1) as TotalSales from CastExample group by col_4')
 display(processed_frame)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -272,6 +592,13 @@ data_df_4 = spark.sql("SELECT DOUBLE(col_1), DATE(col_4) from CastExample")
 data_df_4.printSchema()
 data_df_4.show(truncate=False)
 
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -292,13 +619,34 @@ salary_data.printSchema()
 salary_data.show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 salary_data.dropna().show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 salary_data.describe().show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
@@ -307,9 +655,23 @@ salary_data.show()
 salary_data.describe().show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 new_salary_data = salary_data.dropDuplicates(['Salary']).show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # MARKDOWN ********************
 
@@ -321,26 +683,75 @@ from pyspark.sql.functions import countDistinct, avg
 salary_data.select(avg('Salary')).show()
 
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 salary_data.agg({'Salary':'count'}).show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 salary_data.select(countDistinct("Salary").alias("Distinct Salary")).show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 salary_data.agg({'Salary':'max'}).show() 
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
 salary_data.agg({'Salary':'sum'}).show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 salary_data.orderBy("Salary").show()
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # CELL ********************
 
 salary_data.orderBy(salary_data["Salary"].desc()).show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
